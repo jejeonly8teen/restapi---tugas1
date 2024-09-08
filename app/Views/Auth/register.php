@@ -14,8 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('background1.jpg');
-            background-size: cover;
+            background-color: #f8f9fa;
             background-position: center;
             margin: 0;
             padding: 0;
@@ -161,6 +160,27 @@
             color: #b37da9;
             line-height: 1.5;
             z-index: 1;
+        }
+
+        /* Alert Styles */
+        .alert {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .alert-danger {
+            background-color: #ffcccc;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+        }
+
+        .alert-success {
+            background-color: #ccffcc;
+            color: #3c763d;
+            border: 1px solid #3c763d;
         }
 
         @media (max-width: 768px) {

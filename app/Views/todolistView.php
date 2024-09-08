@@ -9,8 +9,7 @@
         /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-size: cover;
-            background-image: url('background1.jpg');
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             display: flex;

@@ -10,8 +10,7 @@
         /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background: url('background1.jpg') no-repeat center center fixed; /* Ganti 'your-background-image.jpg' dengan nama gambar Anda */
-            background-size: cover; /* Memastikan gambar menutupi seluruh latar belakang */
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             display: flex;
@@ -155,6 +154,21 @@
             z-index: 1;
         }
 
+        /* Alert Styles */
+        .alert {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .alert-danger {
+            background-color: #ffcccc;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -177,6 +191,12 @@
         <div class="login-section">
             <h2>Welcome Back!</h2>
             <p>Please login to your account</p>
+
+            <!-- Username or Password Wrong Notification -->
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+            <?php endif; ?>
+
             <form action="/auth/process" method="post">
                 <?= csrf_field() ?>
                 <div class="input-group">
