@@ -45,12 +45,12 @@
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
-            gap: 15px; /* Adds space between form elements */
+            gap: 15px;
         }
 
         .form-group {
             flex: 1;
-            margin-right: 20px; /* Increased right margin for better spacing */
+            margin-right: 20px;
         }
 
         .form-control {
@@ -128,6 +128,23 @@
             font-size: 1rem;
         }
 
+        /* Completed Task Styles */
+        .completed .task {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        /* Completed Task Button Styles */
+        .btn-completed {
+            background-color: #9b59b6; /* Purple color */
+            color: #fff;
+        }
+
+        .btn-completed:hover {
+            background-color: #8e44ad; /* Darker purple for hover effect */
+            transform: translateY(-2px);
+        }
+
         /* Responsive Design */
         @media (max-width: 576px) {
             .form-inline {
@@ -175,7 +192,7 @@
                     <?php if ($todo['status'] == 'pending'): ?>
                         <a href="<?= site_url('/todolist/complete/'.$todo['id']) ?>" class="btn btn-primary">Selesai</a>
                     <?php else: ?>
-                        <button class="btn btn-primary" disabled>Selesai</button>
+                        <button class="btn btn-completed" disabled>Selesai</button>
                     <?php endif; ?>
                     <a href="<?= site_url('/todolist/delete/'.$todo['id']) ?>" class="btn btn-danger">Hapus</a>
                 </div>
